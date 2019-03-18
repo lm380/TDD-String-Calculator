@@ -27,6 +27,6 @@ public class StringCalcTest {
 	@Test
 	public void newLineShouldWorkAsDelimiter() {
 		StringCalculator calc = new StringCalculator();
-		assertEquals(0, calc.Add("1,\n"));
+		assertEquals(1+2+3, calc.Add("1\n2\n3"));
 	}
 }

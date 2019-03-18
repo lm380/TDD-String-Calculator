@@ -2,7 +2,8 @@
 public class StringCalculator {
 
 	public int Add(String numbers) {
-	
+		String commaRegex = "(\\d+,)+\\d";
+		String newLineRegex = "(\\d+\\n)+\\d";
 		
 		if (numbers == "") {
 			return 0;
@@ -10,9 +11,9 @@ public class StringCalculator {
 		else if(! numbers.contains(",")&&(! numbers.contains("\n"))) {
 			return Integer.valueOf(numbers);
 		}
-		//TODO else if statement to make sure only one delimiter between numbers
+
 		
-		else if (numbers.matches("(\\d,)+\\d")){
+		else if (numbers.matches(commaRegex) || numbers.matches(newLineRegex)){
 			int total = 0;
 			String[] number = numbers.split(",|\n");
 			for (int i=0; i<number.length; i++) {
